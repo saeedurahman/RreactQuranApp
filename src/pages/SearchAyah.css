@@ -1,0 +1,187 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&family=Outfit:wght@100..900&display=swap');
+.ayah-container{
+  padding-top: 10px;
+  margin-top:50px ;
+
+}
+  
+  
+  .ayah-text {
+    font-family: 'Amiri Quran', serif; /* قرآن کی آیات کے لئے فونٹ */
+    font-size: 28px;
+    line-height: 2;
+    margin-bottom: 15px;
+   
+    direction: rtl;
+    text-align: right;
+    grid-column: span 2;
+    margin-top: 30px;
+  }
+  .ayah-list{
+    width: 100%;
+  }
+  .ayah-list h3{
+    color: inherit;
+  }
+  .lableone {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    /* background-color: inherit; */
+    
+  }
+  .lableone label{
+    color: white !important;
+    padding-bottom: 10px;
+  }
+  
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h3 {
+    color: #333;
+  }
+  
+  .title {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    flex-direction: column;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;  
+    gap: 25px;
+    width: 100%;
+  }
+  
+  .input-group label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+  }
+  
+  .ayah-input,
+  .surah-select {
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+  }
+  label{
+    display: flex;
+  justify-content: center;
+  }
+  
+  .fetch-button {
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #007b5e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+    
+  }
+  
+  .fetch-button:hover {
+    background-color: #005a43;
+  }
+  
+  
+
+.ayah-card {
+      background-color: inherit; 
+      color: inherit;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    text-align: right;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 5px;
+    align-items: start;
+    direction: rtl;
+    
+  }
+  [lang="ur"] {
+    font-family: 'Jameel Noori Nastaleeq', serif;
+    font-size: 18px;
+    line-height: 1.8;
+    direction: rtl;
+    text-align: right;
+    
+  }
+  .surah-name {
+    font-size: 18px;
+    color: #007b5e;
+    margin-bottom: 10px;
+    text-align: center;
+    grid-column: span 2;
+  }
+  
+  .ayah-text {
+    font-family: 'Amiri Quran', serif; 
+    font-size: 28px;
+    line-height: 2;
+    margin-bottom: 15px;
+    color: inherit;
+    direction: rtl;
+    text-align: right;
+    grid-column: span 2;
+  }
+  
+  .ayah-translation {
+   
+    font-size: 28px;
+    line-height: 2;
+    color:inherit;
+    direction: rtl;
+    text-align: right;
+  }
+  .ayah-number {
+    font-size: 16px;
+    color: inherit;
+    text-align: left;
+    align-self: center;
+  }
+  
+  .error {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .loading {
+    color: #200505;
+    font-size: 16px;
+    font-style: italic;
+  }
+  
+  .LastTwoparagraph {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px; 
+    text-align: left;
+  }
+  
+  .LastTwoparagraph p {
+    margin: 0;
+  }
+  

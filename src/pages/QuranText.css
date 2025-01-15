@@ -1,0 +1,70 @@
+
+/* بنیادی ڈھانچہ */
+.quran-container {
+  display: flex; 
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+/* سائیڈبار */
+.sidebar {
+  width: 250px; 
+  background-color: #fff;
+  border-right: 2px solid #ccc;
+  padding: 10px;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+
+}
+
+/* مین سیکشن */
+.main {
+  flex: 1; 
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+/* بٹن اسٹائل */
+.juz-btn {
+  display: block;     /* ایک قطار میں */
+  width: 70px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #efefef;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 4px;
+}
+.juz-btn:hover {
+  background-color: #ddd;
+}
+
+/* منتخب شدہ بٹن کو ہائی لائیٹ کرنے کے لیے */
+.juz-selected {
+  background-color: #4CAF50; /* آپ اپنی مرضی کا رنگ رکھیں */
+  color: #fff;
+}
+
+/* آیات کا کنٹینر */
+.ayahs-container {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* ہر آیت بلاک */
+.ayah-block {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+/* عربی متن */
+.arabic-text {
+  font-size: 20px;
+  direction: rtl;
+  text-align: right;
+  color: #1c1c1c;
+}

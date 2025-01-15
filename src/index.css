@@ -1,0 +1,40 @@
+/* for including font */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+/* laybrary ka nam outfit */
+*{
+    /* margin: 0; */
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", serif;
+}
+  
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* افقی اسکرول بار ختم کرنے کے لیے */
+  color: white; /* گلوبل ٹیکسٹ کلر */
+  background-color: rgba(10, 10, 10, 0.932); /* گلوبل بیک گراؤنڈ کلر */
+}
+
+
+a{
+    text-decoration: none;
+    color: inherit;
+    line-height: 1;
+    cursor: pointer;
+}
+.container{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.btn{
+    background-color: #fff;
+    color: #212121;
+    padding: 14px 25px;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+}
