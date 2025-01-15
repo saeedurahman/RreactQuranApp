@@ -153,7 +153,7 @@ function Home() {
               >
                 <p>{surah.englishName}</p>
                 <p>{surah.name}</p>
-                <p>SurahNumber: {surah.number}</p>
+                {/* <p>SurahNumber: {surah.number}</p> */}
                 <p>totalAyah: {surah.numberOfAyahs}</p>
               </button>
             ))}
