@@ -59,30 +59,36 @@ function QuranText() {
               j === selectedJuz ? "juz-btn juz-selected" : "juz-btn"
             }
           >
-            Juz {j}
+            <p>Juz {j}</p>
           </button>
         ))}
       </div>
 
       {/* ---------- مین سیکشن ---------- */}
       <main className="main">
-        {/* اگر جُز منتخب نہیں تو مین سیکشن میں صرف ٹیکسٹ دکھائیں */}
+        
         {!selectedJuz && (
-          <div style={{ backgroundColor: "#fff", padding: "15px" }}>
-            <h2>براہ مہربانی کوئی جُز منتخب کریں</h2>
+          <div className="mainButtonWrapper">
+            <button className="mainButton">
+              Select Juz to Read
+            </button>
           </div>
-        )}
+      )}
+
 
         {/* اگر جُز منتخب ہے تو آیات دکھائیں */}
         {selectedJuz && (
           <div className="ayahs-container">
             <h2>Juz {selectedJuz}</h2>
             {loading ? (
-              <p>Loading...</p>
+              <p style={{color:'red'}}>Loading...</p>
             ) : (
               ayahs.map((ayah, index) => (
+                
                 <div key={ayah.number || index} className="ayah-block">
+      
                   <p className="arabic-text">{ayah.text}</p>
+                  <p className="AyahNumber">{ayah.number}</p>
                   {/* سورہ کا نام دکھانا چاہیں تو: */}
                   {ayah.surah && (
                     <p style={{ fontSize: "14px", color: "#666" }}>

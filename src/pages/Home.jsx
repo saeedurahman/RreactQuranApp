@@ -9,7 +9,7 @@ function Home() {
   const [selectedTranslations, setSelectedTranslations] = useState([]);
   const [authors, setAuthors] = useState([
     { id: "maududi", name: "Abul Ala Maududi", identifier: "ur.maududi" },
-    { id: "ahmedraza", name: "Ahmed Raza Khan", identifier: "ur.ahmedraza" },
+    { id: "ahmedali", name: "Ahmed Ali", identifier: "en.ahmedali" },
     { id: "jalandhry", name: "Fateh M. Jalandhry", identifier: "ur.jalandhry" },
   ]);
   const [loading, setLoading] = useState(false);
@@ -133,7 +133,9 @@ function Home() {
                     : undefined,
               }}
             >
-              {s.englishName} --- --- {s.number}
+              
+              <p>{s.name}</p>
+              <p> {s.number}</p>
             </button>
           ))}
         </aside>
@@ -151,7 +153,7 @@ function Home() {
                 onClick={() => handleSurahClick(surah)}
                 className="surah-btn"
               >
-                <p>{surah.englishName}</p>
+                {/* <p>{surah.englishName}</p> */}
                 <p>{surah.name}</p>
                 {/* <p>SurahNumber: {surah.number}</p> */}
                 <p>totalAyah: {surah.numberOfAyahs}</p>
@@ -166,10 +168,13 @@ function Home() {
             {/* سورت کا انگلش نام اور نمبر */}
             <h2>
               {selectedSurah.number}. {selectedSurah.englishName}
+              
             </h2>
 
             {/* سورت کا عربی نام */}
-            <h3 style={{ marginBottom: "20px" }}>{selectedSurah.name}</h3>
+            <h3 style={{ marginBottom: "20px"}}>Name: {selectedSurah.name}</h3>
+            <h3 style={{ marginBottom: "20px" }}>TotalAyah: {selectedSurah.numberOfAyahs}</h3>
+            
 
             {loading ? (
               <p>Loading...</p>

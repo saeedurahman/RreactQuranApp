@@ -127,16 +127,17 @@ function SearchAyah() {
           {ayahs.length > 0 && !loading && (
               <div className="ayah-list " >
 
-                  <h3>Surah: {surahList.find((surah) => surah.number == surahNumber)?.englishName}</h3>
+                  <h3 className='heading'>Surah: {surahList.find((surah) => surah.number == surahNumber)?.englishName}</h3>
 
-                  <h3>Ayah Range: {ayahStart} - {ayahEnd}</h3>
+                  <h3 className='heading'>Ayah Range: {ayahStart} - {ayahEnd}</h3>
+                  
                   {ayahs.map((ayah, index) => (
                       <div key={index} className="ayah-card ">
                           <p>{ayah.arabic}</p>
                           <p lang="ur">ترجمہ: {ayah.translation}</p>
                       <div className="LastTwoparagraph">
                           <p >مترجم: {ayah.translatorName}</p>
-                          <p>آیت نمبر: {ayah.ayahNumber}</p>
+                          <p> {ayah.ayahNumber}</p>
                       </div>
                       </div>
                   ))}
