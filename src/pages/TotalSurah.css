@@ -62,13 +62,13 @@ h2{
   padding: 10px;
   background-color: #4CAF50;
   width: 300px;
-  margin-left: 365px;
+  margin-left: 390px;
   border-radius: 50px 20px;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* تین کالم */
+  grid-template-columns: repeat(3, 1fr); 
   grid-gap: 20px;
 }
 
