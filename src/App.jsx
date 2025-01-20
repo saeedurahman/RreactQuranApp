@@ -1,5 +1,5 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import AppLayout from './components/Layout/AppLayout';
 
 import './App.css';
@@ -8,41 +8,42 @@ import Home from './pages/Home';
 import QuranText from './pages/QuranText';
 import SearchAyah from './pages/SearchAyah';
 import TotalSurah from './pages/TotalSurah';
-
 import ErrorPage from './pages/ErrorPage';
 
 // Router Configuration
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <AppLayout />,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          path: '/',
+          element: <Home />,
+        },
+        {
+          path: 'QuranText',
+          element: <QuranText />,
+        },
+        {
+          path: 'SearchAyah',
+          element: <SearchAyah />,
+        },
+        {
+          path: 'TotalSurah',
+          element: <TotalSurah />,
+        },
+      ],
+    },
+  ],
   {
-    path: '/',
-    element: <AppLayout />,
-    errorElement: <ErrorPage/>,
-    children: [
-      {
-        path: '/',
-        element: <Home/>
-      },
-      {
-        path: 'QuranText',
-        element: <QuranText/>
-      },
-      {
-        path: 'SearchAyah',
-        element: <SearchAyah/>
-      },
-      {
-        path: 'TotalSurah',
-        element: <TotalSurah/>
-      },
-    ]
+    basename: '/QuranAppReact', // یہاں اپنی ریپوزیٹری کا نام دیں
   }
-]);
+);
 
 function App() {
-  return (
-    <RouterProvider router={router} />
-    // <Home/>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
