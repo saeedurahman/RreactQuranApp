@@ -50,7 +50,6 @@ function QuranText() {
     <div className="quran-container">
       {/* ---------- سائیڈبار ---------- */}
       <div className="sidebar">
-        <h4>All Juz</h4>
         {juzList.map((j) => (
           <button
             key={j}

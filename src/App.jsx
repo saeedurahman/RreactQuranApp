@@ -1,5 +1,5 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import AppLayout from './components/Layout/AppLayout';
 
 import './App.css';
@@ -16,33 +16,30 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <AppLayout />,
-    errorElement: <ErrorPage/>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: '/',
-        element: <Home/>
+        element: <Home />
       },
       {
         path: 'QuranText',
-        element: <QuranText/>
+        element: <QuranText />
       },
       {
         path: 'SearchAyah',
-        element: <SearchAyah/>
+        element: <SearchAyah />
       },
       {
         path: 'TotalSurah',
-        element: <TotalSurah/>
+        element: <TotalSurah />
       },
     ]
   }
-]);
+], { basename: '/RreactQuranApp' });
 
 function App() {
-  return (
-    <RouterProvider router={router} />
-    // <Home/>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

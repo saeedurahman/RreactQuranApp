@@ -75,7 +75,7 @@ function SearchAyah() {
       <div className="ayah-container">
           
 
-          <div className="input-group">
+          <div className="input-group lableone">
               
               <select value={surahNumber} onChange={(e) => setSurahNumber(e.target.value)} className="surah-select">
               <option value="">Select Surah Name</option>
@@ -94,7 +94,7 @@ function SearchAyah() {
                       </option>
                   ))}
               </select>
-              <div className="lableone">
+              <div>
               <label>Starting Ayah</label>
               <input
                   type="number"
@@ -104,7 +104,7 @@ function SearchAyah() {
                   className="ayah-input"
               />
               </div>
-              <div className="lableone">
+              <div>
               <label>Ending Ayah</label>
               <input
                   type="number"
