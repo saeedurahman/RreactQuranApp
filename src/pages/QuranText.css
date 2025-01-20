@@ -1,43 +1,48 @@
-
 /* بنیادی ڈھانچہ */
 .quran-container {
-  display: flex; 
+  display: flex;
   min-height: 100vh;
   font-family: sans-serif;
 }
 
 /* سائیڈبار */
 .sidebar {
-  width: 250px; 
+  position: fixed;
+  width: 260px; 
   background-color: #fff;
   border-right: 2px solid #ccc;
   padding: 10px;
   overflow-y: auto;
+  box-sizing: border-box;
+  height: calc(100vh - 0); 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr ;
-
+  grid-template-columns: 1fr 1fr;
+  gap: 10px; 
+  z-index: 998;
 }
 
 /* مین سیکشن */
 .main {
-  flex: 1; 
+  margin-left: 246px; /* سائیڈبار کی چوڑائی کے برابر */
+  flex: 1; /* مین سیکشن کو باقی جگہ بھرنے دیں */
   background-color: #f0f0f0;
-  padding: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto; /* صرف مین سیکشن اسکرول ہوگا */
 }
 
+/* مین سیکشن کے اندر بٹن */
 .mainButtonWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  min-height: 300px; 
-  background-color: #f4f4f4; 
-  margin: 20px; 
+  min-height: 300px;
+  background-color: #f4f4f4;
+  margin: 20px;
 }
 
-
 .mainButton {
-  background-color: #4CAF50; 
+  background-color: #4CAF50;
   color: white;
   border: none;
   padding: 12px 24px;
@@ -47,13 +52,12 @@
   transition: background-color 0.2s ease;
 }
 .mainButton:hover {
-  background-color: #45a049; 
+  background-color: #45a049;
 }
 
-
+/* جُز بٹنز */
 .juz-btn {
-  display: block;    
-  width: 70px;
+  width: 100%; /* مکمل چوڑائی حاصل کریں */
   margin-bottom: 10px;
   padding: 10px;
   background-color: #efefef;
@@ -61,15 +65,14 @@
   cursor: pointer;
   text-align: center;
   border-radius: 4px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex; /* اندر مواد کو سنٹرلائز کریں */
+  justify-content: center;
+  align-items: center;
 }
 .juz-btn:hover {
   background-color: #ddd;
 }
-.juz-btn p{
-  padding: 10px;
-}
+
 /* منتخب شدہ بٹن کو ہائی لائیٹ کرنے کے لیے */
 .juz-selected {
   background-color: #4CAF50; /* آپ اپنی مرضی کا رنگ رکھیں */
@@ -79,28 +82,33 @@
 /* آیات کا کنٹینر */
 .ayahs-container {
   background-color: #fff;
-  padding: 10px;
+  padding: 20px;
   border-radius: 4px;
+  box-sizing: border-box; /* padding کو شامل کرنے کے لئے */
+  margin-top: 20px;
+  overflow-y: auto; /* صرف آیات کا مواد اسکرول ہوگا */
 }
 
 /* ہر آیت بلاک */
 .ayah-block {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   position: relative;
-  /* border-bottom: 1px solid #ddd; */
-  /* padding-bottom: 5px; */
 }
-.AyahNumber{
-  background-color:#fff;
+
+/* آیت کا نمبر */
+.AyahNumber {
+  background-color: #fff;
   color: #0e0202;
   width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  left: 300px;
+  left: -40px; /* سائیڈبار سے باہر رکھیں */
   border-radius: 50%;
 }
+
 /* عربی متن */
 .arabic-text {
   font-size: 20px;

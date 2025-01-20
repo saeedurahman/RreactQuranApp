@@ -120,6 +120,7 @@ function Home() {
       <div className="sidebar">
         <aside>
           {/* ہمہ وقت تمام سورتیں دکھائیں */}
+
           {surahList.map((s) => (
             <button
               key={s.number}
@@ -180,10 +181,10 @@ function Home() {
             ) : (
               ayahs.map((a, index) => (
                 <div key={index} className="ayah-block">
-                  <p className="arabic-text">{a.arabic}</p>
+                  <p className="arabic-text">{a.arabic}{a.number}</p>
                   {Object.keys(a.translations).map((translatorKey) => (
                     <p className="translation-text" key={translatorKey}>
-                      <strong>{translatorKey}: </strong>
+                      <strong>ترجمہ: </strong>
                       {a.translations[translatorKey]}
                     </p>
                   ))}

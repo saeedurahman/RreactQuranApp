@@ -79,7 +79,7 @@ function QuranText() {
               ayahs.map((ayah, index) => (
                 <div key={ayah.number || index} className="ayah-block">
                   <p className="arabic-text">{ayah.text}</p>
-                  <p className="AyahNumber">{ayah.number}</p>
+                  {/* <p className="AyahNumber">{ayah.number}</p> */}
                   {ayah.surah && (
                     <p style={{ fontSize: "14px", color: "#666" }}>
                       {ayah.surah.name}
