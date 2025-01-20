@@ -5,15 +5,67 @@
   font-family: sans-serif;
   padding: 20px;
   background-color: #f2f2f2;
+  margin-top: 40px;
+}
+.meta-data-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  padding: 20px; 
+}
+h2{
+  color: black;
+  padding-bottom: 10px;
+}
+.meta-data {
+  text-align: center;
 }
 
-/* ٹائٹل */
+.meta-data table {
+  width: 100%; 
+  margin: 0 auto; 
+  border-collapse: collapse; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9; 
+}
+
+.meta-data th,
+.meta-data td {
+  padding: 10px 15px; /* سیل کے اندر اسپیس */
+  border: 1px solid #ddd; /* سیل کے گرد بارڈر */
+  text-align: center; /* متن کو سینٹر کریں */
+  font-family: Arial, sans-serif; /* فونٹ اسٹائل */
+}
+
+.meta-data th {
+  background-color: #4CAF50; 
+  color: white; 
+  text-transform: uppercase; 
+}
+
+.meta-data td {
+  font-size: 16px;
+  color: #333; 
+}
+
+
 .surah-list-container > h1 {
   text-align: center;
   margin-bottom: 20px;
+  /* margin-bottom: 100px; */
+
+  
+}
+.one{
+  border: 2px solid black;
+  /* margin-top: 80px; */
+  padding: 10px;
+  background-color: #4CAF50;
+  width: 300px;
+  margin-left: 365px;
+  border-radius: 50px 20px;
 }
 
-/* گرڈ: 3 کالمز، ہر کارڈ میں سورت کی معلومات */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* تین کالم */
@@ -29,6 +81,19 @@
   padding: 15px;
   text-align: left; /* تاکہ ٹیکسٹ بائیں جانب align ہو */
   transition: background-color 0.2s ease;
+}
+.type-info {
+  display: flex;
+  justify-content: space-between; 
+  gap: 10px; 
+  
+  
+}
+.type-info strong {
+  margin-right: auto; /* "Type:" کو بائیں جانب رکھے گا */
+}
+.type-info span {
+  text-align: center; /* متن کو دائیں جانب رکھے گا */
 }
 
 .surah-card:hover {

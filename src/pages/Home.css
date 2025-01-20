@@ -42,30 +42,31 @@
   .sidebar {
     position: fixed;
     top: 110px;
-      
+    
     left: 0;
-    width: 25%;  
+    /* width: 25%;   */
     height: calc(100vh - 110px); 
     background-color: #fff;
     border-right: 2px solid #ccc;
     overflow-y: auto;
     /* padding: 10px; */
     z-index: 997;
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
+     
   }
   
   .sidebar aside {
     margin-top: 70px;
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* grid-template-columns: 1fr 1fr;  */
   }
   .surah-btn {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
-    width: 90%;
-    margin: 5px 0;
+    /* width: 90%; */
+    margin: 5px 0 0 50px;
     padding: 8px;
     border: none;
     background-color: #efefef;

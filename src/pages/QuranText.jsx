@@ -29,10 +29,11 @@ function QuranText() {
       const response = await axios.get(
         `https://api.alquran.cloud/v1/juz/${juzNumber}/quran-uthmani`
       );
-      // response.data.data کے اندر number, ayahs وغیرہ ہوتا ہے
-      const dataObj = response.data.data; 
+      const dataObj = response.data.data;
       if (dataObj && dataObj.ayahs) {
-        setAyahs(dataObj.ayahs); // صرف آیات درکار ہیں
+        // آیات کو ترتیب میں لائیں
+        const sortedAyahs = dataObj.ayahs.sort((a, b) => a.number - b.number);
+        setAyahs(sortedAyahs);
       }
     } catch (error) {
       console.error("Error fetching Juz data:", error);
@@ -54,10 +55,7 @@ function QuranText() {
           <button
             key={j}
             onClick={() => handleJuzClick(j)}
-            // اگر یہ جُز منتخب ہے تو کلاس میں "active" بھی شامل
-            className={
-              j === selectedJuz ? "juz-btn juz-selected" : "juz-btn"
-            }
+            className={j === selectedJuz ? "juz-btn juz-selected" : "juz-btn"}
           >
             <p>Juz {j}</p>
           </button>
@@ -66,30 +64,23 @@ function QuranText() {
 
       {/* ---------- مین سیکشن ---------- */}
       <main className="main">
-        
         {!selectedJuz && (
           <div className="mainButtonWrapper">
-            <button className="mainButton">
-              Select Juz to Read
-            </button>
+            <button className="mainButton">Select Juz to Read</button>
           </div>
-      )}
-
+        )}
 
         {/* اگر جُز منتخب ہے تو آیات دکھائیں */}
         {selectedJuz && (
           <div className="ayahs-container">
             <h2>Juz {selectedJuz}</h2>
             {loading ? (
-              <p style={{color:'red'}}>Loading...</p>
+              <p style={{ color: "red" }}>Loading...</p>
             ) : (
               ayahs.map((ayah, index) => (
-                
                 <div key={ayah.number || index} className="ayah-block">
-      
                   <p className="arabic-text">{ayah.text}</p>
                   <p className="AyahNumber">{ayah.number}</p>
-                  {/* سورہ کا نام دکھانا چاہیں تو: */}
                   {ayah.surah && (
                     <p style={{ fontSize: "14px", color: "#666" }}>
                       {ayah.surah.name}

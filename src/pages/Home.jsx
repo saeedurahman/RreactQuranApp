@@ -16,7 +16,7 @@ function Home() {
 
   const mainURL = "https://api.alquran.cloud/v1";
 
-  // شروع میں سورتوں کی لسٹ لانا
+
   useEffect(() => {
     fetchSurahList();
   }, []);
