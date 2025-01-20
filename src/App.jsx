@@ -38,7 +38,7 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: '/QuranAppReact', // یہاں اپنی ریپوزیٹری کا نام دیں
+    basename: '/QuranAppReact', 
   }
 );
 
