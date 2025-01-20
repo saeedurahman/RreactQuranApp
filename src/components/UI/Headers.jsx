@@ -25,7 +25,7 @@ function Headders() {
 
                         <li>
                         
-                        <NavLink to = '/TotalSurah'>TotalSurah</NavLink>
+                        <NavLink to = '/TotalSurah'>Meta INFO</NavLink>
                         </li>
                     </ul>
                 </nav>
