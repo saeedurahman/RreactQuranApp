@@ -118,7 +118,7 @@
 
 .ayah-card {
       background-color: inherit; 
-      color: inherit;
+      color: black;
     padding: 20px 20px 0 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -153,7 +153,7 @@
     font-size: 28px;
     line-height: 1;
     margin-bottom: 5px;
-    color: inherit;
+    color: black;
     direction: rtl;
     text-align: right;
     grid-column: span 2;
@@ -163,7 +163,8 @@
   .ayah-translation {
     font-size: 28px;
     line-height: 2;
-    color:inherit;
+    /* color:inherit; */
+    color: black;
     direction: rtl;
     text-align: right;
   }
@@ -181,7 +182,7 @@
   }
   
   .loading {
-    color: #f7f5f5;
+    color: hsl(270, 92%, 41%);
     font-size: 16px;
     font-style: italic;
   }
