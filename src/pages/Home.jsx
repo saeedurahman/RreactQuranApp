@@ -120,7 +120,6 @@ function Home() {
       <div className="sidebar">
         <aside>
           {/* ہمہ وقت تمام سورتیں دکھائیں */}
-          <h4>All Surahs</h4>
           {surahList.map((s) => (
             <button
               key={s.number}
