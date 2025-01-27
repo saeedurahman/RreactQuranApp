@@ -47,9 +47,9 @@ function QuranText() {
   };
 
   return (
-    <div className="quran-container">
+    <div className="qurantext-container">
       {/* ---------- سائیڈبار ---------- */}
-      <div className="sidebar">
+      <div className="qurantext-sidebar">
         {juzList.map((j) => (
           <button
             key={j}
@@ -62,7 +62,7 @@ function QuranText() {
       </div>
 
       {/* ---------- مین سیکشن ---------- */}
-      <main className="main">
+      <main className="qurantext-main">
         {!selectedJuz && (
           <div className="mainButtonWrapper">
             <button className="mainButton">Select Juz to Read</button>
@@ -71,7 +71,7 @@ function QuranText() {
 
         {/* اگر جُز منتخب ہے تو آیات دکھائیں */}
         {selectedJuz && (
-          <div className="ayahs-container">
+          <div className="quran-ayahs-container">
             <h2>Juz {selectedJuz}</h2>
             {loading ? (
               <p style={{ color: "red" }}>Loading...</p>
@@ -79,7 +79,6 @@ function QuranText() {
               ayahs.map((ayah, index) => (
                 <div key={ayah.number || index} className="ayah-block">
                   <p className="arabic-text">{ayah.text}</p>
-                  {/* <p className="AyahNumber">{ayah.number}</p> */}
                   {ayah.surah && (
                     <p style={{ fontSize: "14px", color: "#666" }}>
                       {ayah.surah.name}

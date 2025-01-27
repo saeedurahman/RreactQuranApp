@@ -16,19 +16,16 @@ function Home() {
 
   const mainURL = "https://api.alquran.cloud/v1";
 
-
   useEffect(() => {
     fetchSurahList();
   }, []);
 
-  // جب بھی selectedSurah یا selectedTranslations اپڈیٹ ہوں، آیات دوبارہ لوڈ
   useEffect(() => {
     if (selectedSurah) {
       fetchSurahAyahs(selectedSurah.number);
     }
   }, [selectedSurah, selectedTranslations]);
 
-  // جب بھی کوئی سورت بدلے تو سائیڈبار کو ٹاپ پر اسکرول کریں
   useEffect(() => {
     const asideElement = document.querySelector(".sidebar aside");
     if (asideElement) {
@@ -50,7 +47,6 @@ function Home() {
   const fetchSurahAyahs = async (surahNumber) => {
     setLoading(true);
     try {
-      // عربی متن
       const arabicResponse = await axios.get(
         `${mainURL}/surah/${surahNumber}/quran-uthmani`
       );
@@ -60,7 +56,6 @@ function Home() {
         translations: {},
       }));
 
-      // جتنے مترجمین منتخب ہیں ان کے تراجم شامل کریں
       for (let translator of selectedTranslations) {
         const translationRes = await axios.get(
           `${mainURL}/surah/${surahNumber}/${translator}`
@@ -83,12 +78,10 @@ function Home() {
     setLoading(false);
   };
 
-  // جب سورت پر کلک کریں تو selectedSurah سیٹ کردیں
   const handleSurahClick = (surah) => {
     setSelectedSurah(surah);
   };
 
-  // ✔ چیک باکس لاجک
   const handleCheckboxChange = (event) => {
     const { checked, value } = event.target;
     if (checked) {
@@ -99,11 +92,10 @@ function Home() {
   };
 
   return (
-    <div className="home-container">
-      {/* ---------- ہیڈر ایریا (مترجمین کے چیک باکس) ---------- */}
-      <div className="small-header">
+    <div className="home-containers">
+      <div className="translator-containers">
         {authors.map((author) => (
-          <div className="header" key={author.id}>
+          <div className="translators" key={author.id}>
             <input
               type="checkbox"
               id={author.id}
@@ -116,24 +108,20 @@ function Home() {
         ))}
       </div>
 
-      {/* ---------- سائیڈبار ---------- */}
-      <div className="sidebar">
+      <div className="sidebars">
         <aside>
-          {/* ہمہ وقت تمام سورتیں دکھائیں */}
-
           {surahList.map((s) => (
             <button
               key={s.number}
               onClick={() => handleSurahClick(s)}
-              className="surah-btn"
+              className="surah-btns"
               style={{
                 backgroundColor:
                   selectedSurah && selectedSurah.number === s.number
-                    ? "#d4f4fa" // منتخب شدہ سورت کا ہلکا سا مختلف رنگ
+                    ? "#d4f4fa"
                     : undefined,
               }}
             >
-              
               <p>{s.name}</p>
               <p> {s.number}</p>
             </button>
@@ -141,49 +129,40 @@ function Home() {
         </aside>
       </div>
 
-      {/* ---------- مین سیکشن ---------- */}
-      <main className="main">
-        {/* اگر ابھی تک کوئی سورت منتخب نہ ہوئی ہو تو گرڈ میں سارے بٹن بھی دکھا سکتے ہیں
-            (آپ چاہیں تو اسے ہٹا بھی سکتے ہیں کیونکہ سائیڈبار میں اب ساری سورتیں موجود ہیں) */}
+      <main className="mains">
         {!selectedSurah && (
-          <div className="grid-container">
+          <div className="grid-containers">
             {surahList.map((surah) => (
               <button
                 key={surah.number}
                 onClick={() => handleSurahClick(surah)}
-                className="surah-btn"
+                className="surah-btns"
               >
-                {/* <p>{surah.englishName}</p> */}
                 <p>{surah.name}</p>
-                {/* <p>SurahNumber: {surah.number}</p> */}
                 <p>totalAyah: {surah.numberOfAyahs}</p>
               </button>
             ))}
           </div>
         )}
 
-        {/* اگر کوئی سورت منتخب ہو تو اس کی آیات دکھائیں */}
         {selectedSurah && (
-          <div className="ayahs-container">
-            {/* سورت کا انگلش نام اور نمبر */}
+          <div className="ayahs-containers">
             <h2>
               {selectedSurah.number}. {selectedSurah.englishName}
-              
             </h2>
-
-            {/* سورت کا عربی نام */}
-            <h3 style={{ marginBottom: "20px"}}>Name: {selectedSurah.name}</h3>
-            <h3 style={{ marginBottom: "20px" }}>TotalAyah: {selectedSurah.numberOfAyahs}</h3>
-            
+            <h3 style={{ marginBottom: "20px" }}>Name: {selectedSurah.name}</h3>
+            <h3 style={{ marginBottom: "20px" }}>
+              TotalAyah: {selectedSurah.numberOfAyahs}
+            </h3>
 
             {loading ? (
               <p>Loading...</p>
             ) : (
               ayahs.map((a, index) => (
-                <div key={index} className="ayah-block">
-                  <p className="arabic-text">{a.arabic}{a.number}</p>
+                <div key={index} className="ayah-blocks">
+                  <p className="arabic-texts">{a.arabic}</p>
                   {Object.keys(a.translations).map((translatorKey) => (
-                    <p className="translation-text" key={translatorKey}>
+                    <p className="translation-texts" key={translatorKey}>
                       <strong>ترجمہ: </strong>
                       {a.translations[translatorKey]}
                     </p>

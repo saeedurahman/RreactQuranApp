@@ -75,32 +75,32 @@ function SurahList() {
     <div className="surah-list-container">
       
       <div className="meta-data-container">
-  {metaData ? (
-    <div className="meta-data">
-      <h2>Quran Meta Information</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Total Ayahs</th>
-            <th>Total Juzs</th>
-            <th>Total Manzils</th>
-            <th>Total Rukus</th>
-            <th>Total Sajdas</th>
-            <th>Total Surahs</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{metaData.ayahs.count}</td>
-            <td>{metaData.juzs.count}</td>
-            <td>{metaData.manzils.count}</td>
-            <td>{metaData.rukus.count}</td>
-            <td>{metaData.sajdas.count}</td>
-            <td>{metaData.surahs.count}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+          {metaData ? (
+            <div className="meta-data">
+              <h2>Quran Meta Information</h2>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Total Ayahs</th>
+                      <th>Total Juzs</th>
+                      <th>Total Manzils</th>
+                      <th>Total Rukus</th>
+                      <th>Total Sajdas</th>
+                      <th>Total Surahs</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{metaData.ayahs.count}</td>
+                      <td>{metaData.juzs.count}</td>
+                      <td>{metaData.manzils.count}</td>
+                      <td>{metaData.rukus.count}</td>
+                      <td>{metaData.sajdas.count}</td>
+                      <td>{metaData.surahs.count}</td>
+                    </tr>
+                </tbody>
+              </table>
+      </div>
   ) : (
     <p>Loading meta information...</p>
   )}
@@ -109,6 +109,7 @@ function SurahList() {
 
       {/* سورہ کی معلومات */}
       <h1 className="one">All Surahs (1-114)</h1>
+      <div></div>
       {loading ? (
         <p>Loading Surah info...</p>
       ) : (

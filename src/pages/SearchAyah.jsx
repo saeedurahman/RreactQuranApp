@@ -95,7 +95,7 @@ function SearchAyah() {
                   ))}
               </select>
               <div>
-              <label>Starting Ayah</label>
+              <label> <h3>Starting Ayah</h3></label>
               <input
                   type="number"
                   value={ayahStart}
@@ -105,7 +105,7 @@ function SearchAyah() {
               />
               </div>
               <div>
-              <label>Ending Ayah</label>
+              <label><h3>Ending Ayah</h3></label>
               <input
                   type="number"
                   value={ayahEnd}

@@ -1,16 +1,11 @@
-*{
-    box-sizing:border-box ;
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-/* body {
-   
-    font-family: Arial, sans-serif;
-} */
-
-/* header css */
-
-nav{
+  }
+  
+  /* Header Styling */
+  nav {
     width: 100%;
     background-color: #333;
     color: #fff;
@@ -23,14 +18,66 @@ nav{
     justify-content: space-between;
     z-index: 10;
     min-height: 70px;
-    position: fixed;
-}
-.logo{
+  }
+  
+  .logo {
     width: 180px;
-}
-nav ul li{
-    display: inline-block;
-    margin: 5px 20px;
+  }
+  
+  nav ul {
+    display: flex;
     list-style: none;
+  }
+  
+  nav ul li {
+    margin: 5px 20px;
     font-size: 16px;
-}
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    color: #aaa;
+  }
+  
+  /* Hamburger Menu Button */
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 640px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      display: none;
+      background-color: #333;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      padding: 10px 0;
+    }
+  
+    nav ul.open {
+      display: flex;
+    }
+  
+    nav ul li {
+      text-align: center;
+      margin: 10px 0;
+    }
+  }
+  

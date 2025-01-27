@@ -4,8 +4,6 @@
 .ayah-container{
   padding-top: 10px;
   margin:90px 40px 0 40px;
-   ;
-
 }
   
   
@@ -197,4 +195,24 @@
   .LastTwoparagraph p {
     margin: 0;
   }
+  @media (max-width: 800px) {
+    .ayah-container {
+      margin-right: 100px;
+    }
+    .qurantext-main{
+      margin-left: 0;
+    }
+    .ayah-card{
+      margin-right:-80px ;
+    }
+    .heading{
+      background-color: #007b5e;
+      width: 150px;
+      height: 40px;
+      padding-top: 8px;
+      margin: 10px;
+      border-radius: 20%;
+      text-align: center;
   
+    }
+  }

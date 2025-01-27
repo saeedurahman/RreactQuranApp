@@ -1,34 +1,38 @@
 /* بنیادی ڈھانچہ */
-.quran-container {
+.qurantext-container {
   display: flex;
   min-height: 100vh;
   font-family: sans-serif;
 }
 
-/* سائیڈبار */
-.sidebar {
-  position: fixed;
-  width: 260px; 
-  background-color: #fff;
+/* سائیڈبار (نام تبدیل کیا گیا) */
+.qurantext-sidebar {
+  margin-top: 70px; /* ہیڈر کی جگہ چھوڑیں */
+  position: fixed; /* سائیڈبار کو فکس رکھیں */
+  top: 0;
+  left: 0;
+  width: 260px; /* سائیڈبار کی چوڑائی */
+  background-color: #fff; /* پس منظر */
   border-right: 2px solid #ccc;
   padding: 10px;
-  overflow-y: auto;
+  overflow-y: auto; /* اسکرولنگ فعال کریں */
   box-sizing: border-box;
-  height: calc(100vh - 0); 
+  height: calc(100vh - 70px); /* مکمل اسکرین کی اونچائی سے ہیڈر کی جگہ کم کریں */
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px; 
-  z-index: 998;
+  grid-template-columns: 1fr 1fr; /* دو کالمز کا گِرد */
+  gap: 10px;
+  z-index: 998; /* ترتیب برقرار رکھنے کے لیے */
 }
 
-/* مین سیکشن */
-.main {
-  margin-left: 246px; /* سائیڈبار کی چوڑائی کے برابر */
-  flex: 1; /* مین سیکشن کو باقی جگہ بھرنے دیں */
+
+/* مین سیکشن (نام تبدیل کیا گیا) */
+.qurantext-main {
+  margin-left: 260px; 
+  flex: 1;
   background-color: #f0f0f0;
   padding: 20px;
   box-sizing: border-box;
-  overflow-y: auto; /* صرف مین سیکشن اسکرول ہوگا */
+  overflow-y: auto;
 }
 
 /* مین سیکشن کے اندر بٹن */
@@ -57,7 +61,7 @@
 
 /* جُز بٹنز */
 .juz-btn {
-  width: 100%; /* مکمل چوڑائی حاصل کریں */
+  width: 100%;
   margin-bottom: 10px;
   padding: 10px;
   background-color: #efefef;
@@ -65,7 +69,7 @@
   cursor: pointer;
   text-align: center;
   border-radius: 4px;
-  display: flex; /* اندر مواد کو سنٹرلائز کریں */
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -73,46 +77,37 @@
   background-color: #ddd;
 }
 
-/* منتخب شدہ بٹن کو ہائی لائیٹ کرنے کے لیے */
 .juz-selected {
-  background-color: #4CAF50; /* آپ اپنی مرضی کا رنگ رکھیں */
+  background-color: #4CAF50;
   color: #fff;
 }
 
-/* آیات کا کنٹینر */
-.ayahs-container {
+/* آیات کا کنٹینر (نام تبدیل کیا گیا) */
+.quran-ayahs-container {
   background-color: #fff;
   padding: 20px;
   border-radius: 4px;
-  box-sizing: border-box; /* padding کو شامل کرنے کے لئے */
-  margin-top: 20px;
-  overflow-y: auto; /* صرف آیات کا مواد اسکرول ہوگا */
+  box-sizing: border-box;
+  margin-top: 40px;
+  overflow-y: auto;
 }
 
-/* ہر آیت بلاک */
 .ayah-block {
   margin-bottom: 20px;
   position: relative;
 }
 
-/* آیت کا نمبر */
-.AyahNumber {
-  background-color: #fff;
-  color: #0e0202;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  left: -40px; /* سائیڈبار سے باہر رکھیں */
-  border-radius: 50%;
-}
-
-/* عربی متن */
 .arabic-text {
   font-size: 20px;
   direction: rtl;
   text-align: right;
   color: #1c1c1c;
+}
+@media (max-width: 640px) {
+  .qurantext-sidebar {
+    width: 150px;
+  }
+  .qurantext-main{
+    margin-left: 0;
+  }
 }

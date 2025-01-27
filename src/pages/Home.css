@@ -4,67 +4,49 @@
   font-weight: normal;
   font-style: normal;
 }
-
-.home-container {
-  display: flex; /* سائیڈبار اور مین سیکشن کو ایک ساتھ رکھنے کے لیے */
-  min-height: 100vh;
-  font-family: sans-serif;
-  margin-top: 70px;
-  background-color: #f0f0f0;
-  box-sizing: border-box;
+*{
+  margin-left: 0;
+  padding-left: 0;
 }
-
-/* ------------ HEADER AREA ------------ */
-.small-header {
-  width: calc(100% - 260px); 
-  margin-left: 260px; 
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  /* background-color: #333; */
-  min-height: 40px;
+.translator-containers {
   position: fixed;
-  top: 70px;
-  z-index: 110;
-  box-sizing: border-box;
+  top: 70px; /* ہیڈر کے نیچے */
+  left: 0; /* پوری چوڑائی پر پھیلائیں */
+  width: 100%; /* پوری چوڑائی لیں */
+  background-color: #333; /* ہیڈر جیسا کالا رنگ */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; /* مترجمین کے درمیان جگہ */
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ہلکا شیڈو */
 }
-label{
-  color: white;
-  /* background-color: chocolate; */
-}
-.header {
-  width: 25%;
+
+.translators {
   background-color: rgb(9, 118, 138);
   border-radius: 50px 20px;
   color: white;
-  margin-top: 10px;
-  padding: 10px;
+  padding: 8px 15px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* ------------ SIDEBAR ------------ */
-/* ------------ SIDEBAR ------------ */
-.sidebar {
-  position: fixed;
-  width: 260px; /* سائیڈبار کی چوڑائی مقرر کر دی گئی */
-  top: 110px;
-  left: 0;
-  height: calc(100vh - 110px);
-  background-color: #f0f0f0;
-  border-right: 2px solid #ccc;
-  overflow-y: auto;
-  padding: 10px;
-  box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* دو کالمز */
-  gap: 10px; /* کالمز اور قطاروں کے درمیان جگہ */
-  z-index: 997;
+.translators input {
+  margin-right: 8px; /* چیک باکس اور لیبل کے درمیان جگہ */
 }
 
-.surah-btn {
-  margin-left: 40px;
+.translators label {
+  font-size: 14px;
+  color: white;
+}
+
+/* ------------ SIDEBAR ------------ */
+
+
+.surah-btns {
+  /* margin-left: 10px; */
   background-color: #efefef;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -82,51 +64,87 @@ label{
   padding: 10px;
   
 }
-.surah-btn p {
+.surah-btns p {
   margin: 0 10px; /* لیفٹ اور رائٹ ٹیکسٹ کے درمیان 10px کی جگہ */
 }
-.surah-btn:hover {
+.surah-btns:hover {
   background-color: #ddd;
 }
 
 
 /* ------------ MAIN ------------ */
-.main {
-  flex: 1; 
-  margin-left: 260px; /* سائیڈبار کی چوڑائی کے مطابق */
-  margin-top: 40px;
-  padding: 20px; /* مواد کو اچھے انداز میں دکھانے کے لیے */
-  background-color:#f0f0f0;
+.mains {
+  flex: 1;
+  margin-left: 150px; /* سائیڈبار کی چوڑائی */
+  margin-top: 120px; /* مترجمین کنٹینر کے نیچے جگہ چھوڑیں */
+  padding: 20px;
+  background-color: #f0f0f0;
   box-sizing: border-box;
-  min-height: calc(100vh - 110px);
-  overflow-y: auto; 
+  min-height: calc(100vh - 120px);
+  overflow-y: auto;
 }
 
 /* آیات کا کنٹینر */
-.ayahs-container {
+.ayahs-containers {
   background-color: #fff;
   padding: 15px;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
-.ayah-block {
+.ayah-blocks {
   margin-bottom: 20px;
   border-bottom: 1px solid #ddd;
  
 }
 
-.arabic-text {
+.arabic-texts {
   font-size: 20px;
   direction: rtl;
   text-align: right;
   color: #1c1c1c;
 }
 
-.translation-text {
+.translation-texts {
   font-size: 18px;
   font-family: 'JameelNooriNastaleeq', sans-serif;
   margin-top: 5px;
   color: #1c1c1c;
   direction: rtl;
 }
+/* نیا */
+.grid-containers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.sidebars {
+  position: fixed;
+  width: 200px;
+  height: calc(100vh - 120px);
+  overflow-y: auto;
+  margin-right:150px;
+}
+
+@media (max-width: 950px) {
+  .grid-containers {
+    
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sidebars {
+    width: 200px;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-containers {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .sidebars {
+    width: 150px;
+  }
+}
+
