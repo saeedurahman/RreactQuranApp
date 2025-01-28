@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Headers.css';
 
-function Headders() {
+function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -20,16 +20,16 @@ function Headders() {
         </button>
         <ul className={`menu ${menuOpen ? 'open' : ''}`}>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" onClick={toggleMenu}>Home</NavLink>
           </li>
           <li>
-            <NavLink to="/QuranText">QuranText</NavLink>
+            <NavLink to="/QuranText" onClick={toggleMenu}>QuranText</NavLink>
           </li>
           <li>
-            <NavLink to="/SearchAyah">SearchAyah</NavLink>
+            <NavLink to="/SearchAyah" onClick={toggleMenu}>SearchAyah</NavLink>
           </li>
           <li>
-            <NavLink to="/TotalSurah">Meta INFO</NavLink>
+            <NavLink to="/TotalSurah" onClick={toggleMenu}>Meta INFO</NavLink>
           </li>
         </ul>
       </nav>
@@ -37,4 +37,4 @@ function Headders() {
   );
 }
 
-export default Headders;
+export default Header;

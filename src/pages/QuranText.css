@@ -1,41 +1,41 @@
-/* بنیادی ڈھانچہ */
+/* -------------- بنیادی ڈھانچہ -------------- */
 .qurantext-container {
   display: flex;
   min-height: 100vh;
   font-family: sans-serif;
 }
 
-/* سائیڈبار (نام تبدیل کیا گیا) */
+/* -------------- سائیڈبار -------------- */
 .qurantext-sidebar {
-  margin-top: 70px; /* ہیڈر کی جگہ چھوڑیں */
-  position: fixed; /* سائیڈبار کو فکس رکھیں */
+  margin-top: 70px;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 260px; /* سائیڈبار کی چوڑائی */
-  background-color: #fff; /* پس منظر */
+  width: 260px; /* بڑی اسکرین پر 260px */
+  background-color: #fff;
   border-right: 2px solid #ccc;
   padding: 10px;
-  overflow-y: auto; /* اسکرولنگ فعال کریں */
+  overflow-y: auto;
   box-sizing: border-box;
-  height: calc(100vh - 70px); /* مکمل اسکرین کی اونچائی سے ہیڈر کی جگہ کم کریں */
+  height: calc(100vh - 70px);
   display: grid;
-  grid-template-columns: 1fr 1fr; /* دو کالمز کا گِرد */
+  grid-template-columns: 1fr 1fr; 
   gap: 10px;
-  z-index: 998; /* ترتیب برقرار رکھنے کے لیے */
+  z-index: 998;
 }
 
-
-/* مین سیکشن (نام تبدیل کیا گیا) */
+/* -------------- مین سیکشن -------------- */
 .qurantext-main {
-  margin-left: 260px; 
+  margin-left: 260px; /* بڑی اسکرین پر سائیڈبار کے مطابق مارجن */
   flex: 1;
   background-color: #f0f0f0;
-  padding: 20px;
+  padding: 10px ;
   box-sizing: border-box;
   overflow-y: auto;
+  border: 3px solid blue;
 }
 
-/* مین سیکشن کے اندر بٹن */
+/* ---------- مین سیکشن کے اندر بٹن ---------- */
 .mainButtonWrapper {
   display: flex;
   justify-content: center;
@@ -44,7 +44,6 @@
   background-color: #f4f4f4;
   margin: 20px;
 }
-
 .mainButton {
   background-color: #4CAF50;
   color: white;
@@ -59,7 +58,7 @@
   background-color: #45a049;
 }
 
-/* جُز بٹنز */
+/* ---------- جُز بٹن ---------- */
 .juz-btn {
   width: 100%;
   margin-bottom: 10px;
@@ -76,38 +75,61 @@
 .juz-btn:hover {
   background-color: #ddd;
 }
-
 .juz-selected {
   background-color: #4CAF50;
   color: #fff;
 }
 
-/* آیات کا کنٹینر (نام تبدیل کیا گیا) */
+/* ---------- آیات کا کنٹینر ---------- */
 .quran-ayahs-container {
   background-color: #fff;
-  padding: 20px;
+  padding-top: 20px;
   border-radius: 4px;
   box-sizing: border-box;
   margin-top: 40px;
   overflow-y: auto;
 }
-
 .ayah-block {
   margin-bottom: 20px;
   position: relative;
 }
-
 .arabic-text {
   font-size: 20px;
   direction: rtl;
   text-align: right;
   color: #1c1c1c;
+  
 }
-@media (max-width: 640px) {
+
+/* --------- 800px سے کم چوڑائی پر سائیڈبار/مین سیکشن ایڈجسٹ --------- */
+@media (max-width: 800px) {
   .qurantext-sidebar {
-    width: 150px;
+    width: 150px;              /* سائیڈبار کی چوڑائی کم کردیں */
+    grid-template-columns: 1fr;/* بٹن ایک ہی کالم میں آجائیں تاکہ جگہ کم نہ ہو */
   }
-  .qurantext-main{
-    margin-left: 0;
+  
+  .qurantext-main {
+    margin-left: 150px; 
+
+  }
+  .quran-ayahs-container{
+    margin-left: 135px;
+  }
+}
+
+/* اگر مزید چھوٹی اسکرین پر اور بھی کم کرنا چاہیں تو ایک اور بریک پوائنٹ مثالاً 500px پر لگا سکتے ہیں */
+@media (max-width: 500px) {
+  .qurantext-sidebar {
+    width: 120px;
+  }
+  .qurantext-main {
+    margin-left: 125px;
+  }
+  .mainButton {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  .quran-ayahs-container{
+    margin-left: 105px;
   }
 }
